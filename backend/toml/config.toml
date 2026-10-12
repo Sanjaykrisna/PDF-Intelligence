@@ -1,0 +1,44 @@
+[server]
+port = 8080
+jwt_secret = "super_secret_jwt_key_change_me_in_production"
+allow_origins = "*"
+
+[database]
+host = "127.0.0.1"
+port = 5432
+user = "postgres"
+password = ""
+dbname = ""
+
+[ai]
+provider = "gemini"
+base_url = "https://generativelanguage.googleapis.com"
+model = "gemini-3.5-flash-lite"
+api_key = ""
+temperature = 0.5
+timeout_seconds = 20
+embed_model = "gemini-embedding-001"
+embed_dimension = 1536
+
+[storage]
+upload_dir = "d:/fullstack_projects/PT_05/PDF_Intelligence/backend/uploads"
+
+[validation]
+max_file_size_mb = 20
+max_pages = 100
+max_attempts = 2
+
+[privacy]
+remove_email = true
+remove_phone = true
+remove_roll_number = true
+remove_student_id = true
+remove_aadhaar = true
+remove_address = false
+
+[retrieval]
+top_k = 5
+similarity_threshold = 0.25
+hybrid_search = true
+vector_weight = 0.70
+keyword_weight = 0.30

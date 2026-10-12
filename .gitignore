@@ -1,0 +1,33 @@
+# Binaries and executables
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+backend/backend.exe
+
+# Runtime logs
+backend/log/
+*.log
+log_*.txt
+
+# Uploaded documents
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Environment variables & local configs
+.env
+.env.*
+*.local
+
+# Node & Frontend dependencies/builds
+node_modules/
+frontend/node_modules/
+frontend/dist/
+dist/
+
+# OS / Editor artifacts
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

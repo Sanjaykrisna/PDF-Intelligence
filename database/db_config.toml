@@ -1,0 +1,35 @@
+# ==============================================================================
+# Database Configuration File - PDF Intelligence (PT_05)
+# ==============================================================================
+# This configuration corresponds to the PostgreSQL database with pgvector
+# utilized by backend/config/config.go and backend/repositories/db.go.
+
+[database]
+driver = "postgres"
+host = "127.0.0.1"
+port = 5432
+user = "postgres"
+password = ""
+dbname = "project_review_ai"
+sslmode = "disable"
+
+# Connection Pool Settings
+max_open_conns = 25
+max_idle_conns = 10
+conn_max_lifetime_minutes = 30
+conn_max_idle_time_minutes = 10
+
+# Database Extensions Required
+[database.extensions]
+pgcrypto = true       # For gen_random_uuid()
+vector = true         # pgvector extension for high-dimensional embeddings (1536 dim)
+
+# Vector Search & Retrieval Tuning
+[retrieval]
+top_k = 5
+similarity_threshold = 0.25
+hybrid_search = true
+vector_weight = 0.70
+keyword_weight = 0.30
+embedding_dimension = 1536
+embedding_model = "gemini-embedding-001"
